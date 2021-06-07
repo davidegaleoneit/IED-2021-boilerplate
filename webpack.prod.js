@@ -1,6 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -21,12 +21,17 @@ module.exports = {
           'css-loader',
         ],
       },
+      {
+        test: /\.html$/,
+        exclude: /node_modules/,
+        use: { loader: 'html-loader' },
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin(),
     // always deletes the dist folder first in each build run.
-    new CleanWebpackPlugin(['dist'], {
+    new CleanWebpackPlugin({
       root: __dirname, // "dist" will be appended to this absolute path. See https://github.com/johnagan/clean-webpack-plugin#options-and-defaults-optional
     }),
     // the plugin to extract our css into separate .css files
