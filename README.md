@@ -16,4 +16,6 @@ Follow this guide [here](https://code.visualstudio.com/docs/editor/integrated-te
 
 Run a local server by typing `npm run start` in the terminal
 
+Open the browser ad http://localhost:8080/
+
 ### NOW YOU CAN CODE
