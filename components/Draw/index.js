@@ -9,7 +9,7 @@ function sketch(p) {
 
   p.draw = () => {
     p.fill(255);
-    p.rect(10, 10, 80, 80);
+    p.rect(10, 10, 80, 82);
   };
 }
 
